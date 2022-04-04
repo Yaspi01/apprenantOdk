@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ApprenantServiceImp implements ApprenantService{
@@ -42,6 +43,11 @@ public class ApprenantServiceImp implements ApprenantService{
     @Override
     public Apprenant afficher_apprenant_by_id(Long id) {
         return apprenantRepository.findById(id).get();
+    }
+
+    @Override
+    public Optional<Apprenant> loginUser(String login, String password) {
+        return apprenantRepository.getUserByLoginAndPassword(login, password);
     }
 
     @Override

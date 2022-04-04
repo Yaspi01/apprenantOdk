@@ -26,16 +26,22 @@ public class OdkApprenantsApplication {
 		return args -> {
 			apprenantRepository.save(new Apprenant("Doumbia" ,"Yacouba",3,75900085, "Yacoubadoumbia@gmail.com",
 					"Yacouba01", "azerty","Homme", ApprenantStatut.ACTIVE, new Date(), new Date()));
-			apprenantRepository.save(new Apprenant("Diarra" ,"Dramane",3,75900085, "diarradramane@gmail.com",
+			apprenantRepository.save(new Apprenant("Samake" ,"Modibo",3,75900085, "modibosamake@gmail.com",
 					"Diarra", "azerty","Homme", ApprenantStatut.ACTIVE, new Date(), new Date()));
 			apprenantRepository.save(new Apprenant("Sanogo" ,"Allassan",3,75900085, "sanogoallassa@gmail.com",
-					"Jumeau", "azerty","Homme", ApprenantStatut.ACTIVE, new Date(), new Date()));
+					"Jumeau", "azerty","Homme", ApprenantStatut.DESACTIVE, new Date(), new Date()));
 			apprenantRepository.save(new Apprenant("N'Djim" ,"Fatoumata",3,75900085, "ndjim@gmail.com",
 					"N'djim", "azerty","Femme", ApprenantStatut.DESACTIVE, new Date(), new Date()));
-			apprenantRepository.save(new Apprenant("Keita" ,"Awa",3,75900085, "awakeita@gmail.com",
-					"Awa", "azerty","Femme", ApprenantStatut.ACTIVE, new Date(), new Date()));
+			apprenantRepository.save(new Apprenant("Maiga" ,"Abdoul",3,75900085, "abdoulmaiga@gmail.com",
+					"Abdoul", "azerty","Femme", ApprenantStatut.ACTIVE, new Date(), new Date()));
+			apprenantRepository.save(new Apprenant("Konate" ,"Diakalia",3,75900085, "diakaliakonate@gmail.com",
+					"Diakalia", "azerty","Homme", ApprenantStatut.DESACTIVE, new Date(), new Date()));
 			apprenantRepository.save(new Apprenant("Sanogo" ,"Ibrahima",3,75900085, "ibrahimsanogo@gmail.com",
 					"IB", "azerty","Homme", ApprenantStatut.DESACTIVE, new Date(), new Date()));
+			apprenantRepository.save(new Apprenant("Cisse" ,"Thomas",3,75900085, "thomascisse@gmail.com",
+					"Thomas", "azerty","Femme", ApprenantStatut.ACTIVE, new Date(), new Date()));
+			apprenantRepository.save(new Apprenant("Bagayoko" ,"Mamoutou",3,75900085, "mamoutoubagayoko@gmail.com",
+					"Mamoutou", "azerty","Femme", ApprenantStatut.DESACTIVE, new Date(), new Date()));
 			apprenantRepository.findAll().forEach(apprenant -> {
 				System.out.println(apprenant.toString());
 			});

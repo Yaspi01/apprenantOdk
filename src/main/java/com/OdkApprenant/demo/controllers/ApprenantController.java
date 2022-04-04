@@ -8,8 +8,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
+@CrossOrigin("*")
 @RequestMapping("/apprenantOdk")
 public class ApprenantController {
     @Autowired
@@ -24,7 +26,8 @@ public class ApprenantController {
     public Apprenant getOne (@PathVariable Long id){
         return apprenantService.afficher_apprenant_by_id(id);
     }
-    @GetMapping(path="/apprenant", produces = {MediaType.APPLICATION_JSON_VALUE})
+
+    @GetMapping(path="/ListeApprenants", produces = {MediaType.APPLICATION_JSON_VALUE})
     public List<Apprenant> liste(){
         return apprenantService.liste_apprenant();
     }
@@ -37,6 +40,10 @@ public class ApprenantController {
     @DeleteMapping(value="/apprenant/{id}")
     public void delete(@PathVariable("id") Long id) {
         apprenantService.supprimer_apprenant(id);
+    }
 
+    @GetMapping(path = "login/login={login}&password={password}")
+    Optional<Apprenant> loginApprenant(@PathVariable("login") String login, @PathVariable("password") String password){
+        return apprenantService.loginUser(login, password);
     }
 }
